@@ -9,3 +9,5 @@
 4) dotnet new xunit -o CsharpSolid.Tests
 
 5) dotnet sln add ./CsharpSolid.Tests/CsharpSolid.Tests.csproj
+
+6) dotnet add ./CsharpSolid.Tests/CsharpSolid.Tests.csproj reference ./CsharpSolid/CsharpSolid.csproj

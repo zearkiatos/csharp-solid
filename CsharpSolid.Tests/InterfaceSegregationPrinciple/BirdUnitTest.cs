@@ -1,5 +1,5 @@
 using Xunit;
-using CsharpSolid;
+using CsharpSolid.InterfaceSegregationPrinciple;
 
 namespace CsharpSolid.Tests.InterfaceSegregationPrinciple
 {

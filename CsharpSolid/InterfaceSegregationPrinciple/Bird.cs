@@ -1,8 +1,8 @@
 using System;
 namespace CsharpSolid.InterfaceSegregationPrinciple {
-    public class Bird : Animal {
-        public void executeAction(string action) {
-            Console.WriteLine(action);
-        }
+    interface Bird : Animal {
+        public void run();
+
+        public void fly();
     }
 }
