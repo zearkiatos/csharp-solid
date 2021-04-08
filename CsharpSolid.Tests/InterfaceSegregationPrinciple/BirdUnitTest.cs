@@ -1,5 +1,9 @@
 using Xunit;
-using CsharpSolid.InterfaceSegregationPrinciple;
+using CsharpSolid.InterfaceSegregationPrinciple.Models;
+using Moq;
+using System;
+using System.IO;
+
 
 namespace CsharpSolid.Tests.InterfaceSegregationPrinciple
 {
@@ -8,9 +12,13 @@ namespace CsharpSolid.Tests.InterfaceSegregationPrinciple
         [Fact]
         public void Should_send_and_return_and_execute_action()
         {
+            Mock.
+            string expectedConsoleWriteLine = "🦜 Bird is flying";
             Bird birdTest = new Bird();
 
-            // Assert.NotEqual(expectedAreaTakingIntoAccountRectangleLaws, square.GetArea());
+            birdTest.fly();
+
+            Assert.Equal(expectedConsoleWriteLine, Environment.NewLine);
             
         }
     }
