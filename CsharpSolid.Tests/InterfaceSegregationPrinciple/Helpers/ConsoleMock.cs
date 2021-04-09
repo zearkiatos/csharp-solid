@@ -25,5 +25,12 @@ namespace CsharpSolid.Tests.InterfaceSegregationPrinciple.Helpers
             stringWriter.Dispose();
         }
 
+        public void CleanOutput()
+        {
+            stringWriter.Flush();
+            originalOutput.Flush();
+            Console.Clear();
+        }
+
     }
 }

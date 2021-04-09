@@ -1,4 +1,6 @@
-namespace CsharpSolid.InterfaceSegregationPrinciple.Context {
-    interface Animal {
+namespace CsharpSolid.InterfaceSegregationPrinciple.Context
+{
+    interface Animal
+    {
     }
 }
