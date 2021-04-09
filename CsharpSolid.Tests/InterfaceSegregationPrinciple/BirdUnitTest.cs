@@ -1,4 +1,5 @@
 using Xunit;
+using Xunit.Abstractions;
 using Moq;
 using System;
 using CsharpSolid.InterfaceSegregationPrinciple.Models;
@@ -12,15 +13,21 @@ namespace CsharpSolid.Tests.InterfaceSegregationPrinciple
         [Fact]
         public void Should_send_and_return_and_execute_action()
         {
-            Mock<Bird> birdMock = new Mock<Bird>();
-            birdMock.CallBase = true;
-            ConsoleMock consoleMock = new ConsoleMock();
-            // birdMock.Setup(x => x.fly()).Raises()
-            string expectedConsoleWriteLine = "🦜 Bird is flying";
-            Bird birdTest = new Bird();
-            birdTest.fly();
 
-            Assert.Equal(expectedConsoleWriteLine, Environment.NewLine);
+            var currentConsoleOut = Console.Out;
+
+            Bird bird = new Bird(); 
+            
+            string text = "🦜 Bird is flying\n";
+
+            using (var consoleOutput = new ConsoleMock())
+            {
+                bird.fly();
+
+                Assert.Equal(text, consoleOutput.GetOuput());
+            }
+
+            Assert.Equal(currentConsoleOut, Console.Out);
 
         }
     }
