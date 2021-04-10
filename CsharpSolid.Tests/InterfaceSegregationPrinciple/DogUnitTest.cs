@@ -7,7 +7,7 @@ namespace CsharpSolid.Tests.InterfaceSegregationPrinciple
     public class DogUnitTest
     {
         [Fact]
-        public void Should_send_and_return_and_execute_action()
+        public void Should_send_and_return_and_execute_dog_action()
         {
             Console.Clear();
             var currentConsoleOut = Console.Out;
@@ -20,8 +20,6 @@ namespace CsharpSolid.Tests.InterfaceSegregationPrinciple
                 dog.run();
                 Assert.Equal(text, consoleOutput.GetOuput());
             }
-
-            Assert.Equal(currentConsoleOut, Console.Out);
 
         }
     }
